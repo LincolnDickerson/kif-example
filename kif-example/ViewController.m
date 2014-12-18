@@ -9,7 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *displayBox;
+@property (weak, nonatomic) IBOutlet UILabel *outputDisplay;
 @end
 
 @implementation ViewController
@@ -22,6 +23,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)echo:(UIButton *)sender {
+    self.outputDisplay.text =self.displayBox.text;
+    self.displayBox.text = @"";
 }
 
 @end
